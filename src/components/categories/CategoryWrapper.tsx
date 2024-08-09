@@ -7,7 +7,7 @@ const CategoryWrapper = async () => {
   const wixClient = await wixClientServer()
   const response = await wixClient.collections.queryCollections().find()
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Cargando...</div>}>
       <CategoryList list={response.items} />
     </Suspense>
   )

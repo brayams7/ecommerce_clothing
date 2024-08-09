@@ -35,7 +35,7 @@ const HomePage = async () => {
         <h1 className="text-3xl">
           Products
         </h1>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Cargando...</div>}>
           <ProductList limit={4} categoryId={process.env.NEXT_PUBLIC_CATEGORY_ID_ACCESORIES!}/>
         </Suspense>
       </section>
@@ -43,7 +43,7 @@ const HomePage = async () => {
         <h1 className="text-2xl px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 mb-8">
           Categories
         </h1>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Cargando...</div>}>
           <CategoryWrapper />
         </Suspense>
       </section>

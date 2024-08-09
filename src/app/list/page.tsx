@@ -19,22 +19,23 @@ const ListPage = async ({
     | null = null
   try {
     response = await wixClient.collections.getCollectionBySlug(categoryName)
-  } catch (error:object | any) {
-    if(typeof error === "object" && error?.details) {
-      if(error?.details?.applicationError?.code === 404){
+  } catch (error: object | any) {
+    if (typeof error === "object" && error?.details) {
+      if (error?.details?.applicationError?.code === 404) {
         return notFound()
       }
     }
   }
 
-  if(!response) return notFound()
+  if (!response) return notFound()
 
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
       <div className="hidden bg-pink-50 px-4 sm:flex justify-between h-64">
         <div className="w-2/3 flex flex-col items-center justify-center gap-8">
           <h1 className="text-4xl font-semibold leading-[48px] text-gray-700">
-            Grab up to 50% off on <br /> Selected products
+            Aprovecha hasta un 50% de descuento en <br /> productos
+            seleccionados
           </h1>
           <button className="rounded-3xl bg-lama text-small w-max text-white py-3 px-5">
             Buy now
@@ -50,9 +51,11 @@ const ListPage = async ({
 
       {/* PRODUCT LIST */}
 
-      <h1 className="mt-12 text-xl font-semibold">{response.collection?.name} For you!</h1>
+      <h1 className="mt-12 text-xl font-semibold">
+        {response.collection?.name} !Para ti!
+      </h1>
       {response && (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Cargando...</div>}>
           <ProductList
             categoryId={response.collection?._id || CATEGORY_ALL_ID}
             limit={20}

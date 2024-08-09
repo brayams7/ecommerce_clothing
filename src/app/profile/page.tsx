@@ -37,28 +37,28 @@ const ProfilePage = async () => {
         <h1 className="text-2xl">Profile</h1>
         <form action={updateUser} className="mt-12 flex flex-col gap-4">
           <input type="text" hidden name="id" defaultValue={user.member?.contactId || ""} />
-          <label className="text-sm text-gray-700">Username</label>
+          <label className="text-sm text-gray-700">Usuario</label>
           <input
             type="text"
             name="username"
             placeholder={user.member?.profile?.nickname || "john"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
-          <label className="text-sm text-gray-700">First Name</label>
+          <label className="text-sm text-gray-700">Nombres </label>
           <input
             type="text"
             name="firstName"
             placeholder={user.member?.contact?.firstName || "John"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
-          <label className="text-sm text-gray-700">Surname</label>
+          <label className="text-sm text-gray-700">Apellidos </label>
           <input
             type="text"
             name="lastName"
             placeholder={user.member?.contact?.lastName || "Doe"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
-          <label className="text-sm text-gray-700">Phone</label>
+          <label className="text-sm text-gray-700">Teléfono</label>
           <input
             type="text"
             name="phone"
@@ -69,11 +69,11 @@ const ProfilePage = async () => {
             }
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
-          <label className="text-sm text-gray-700">E-mail</label>
+          <label className="text-sm text-gray-700">Correo electrónico</label>
           <input
             type="email"
             name="email"
-            placeholder={user.member?.loginEmail || "john@gmail.com"}
+            placeholder={user.member?.loginEmail || "brayck@gmail.com"}
             className="ring-1 ring-gray-300 rounded-md p-2 max-w-96"
           />
           <UpdateButton />

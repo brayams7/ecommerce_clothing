@@ -52,7 +52,7 @@ const Add: React.FC<Props> = ({ productId, variantId, stockNumber }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <h4 className="font-medium">Choose a Quantity</h4>
+      <h4 className="font-medium">Seleccione la cantidad</h4>
       <div className="flex justify-between">
         <div className="flex items-center gap-4">
           <div className="bg-gray-100 py-2 px-4 rounded-3xl flex items-center justify-between w-32">
@@ -75,11 +75,11 @@ const Add: React.FC<Props> = ({ productId, variantId, stockNumber }) => {
             </button>
           </div>
           {stockNumber === 0 ? (
-            <span className="text-red-500 text-sm">Out of stock</span>
+            <span className="text-red-500 text-sm">No hay stock</span>
           ) : (
             <div className="text-xs">
-              Only <span className="text-orange-400">{stockNumber} items</span>{" "}
-              left! <br /> Don`t miss it
+              !Solo quedan <span className="text-orange-400">{stockNumber} artículos</span>{" "}
+              ! <br /> No te lo pierdas
             </div>
           )}
         </div>
@@ -92,7 +92,7 @@ const Add: React.FC<Props> = ({ productId, variantId, stockNumber }) => {
           disabled={isLoading || stockNumber === 0}
           className="w-36 text-sm rounded-3xl ring-1 ring-lama text-lama py-2 px-4 hover:bg-lama hover:text-white disabled:cursor-not-allowed disabled:bg-pink-200 disabled:text-white disabled:ring-none"
         >
-          Add to cart
+          Añadir al carrito
         </button>
       </div>
     </div>

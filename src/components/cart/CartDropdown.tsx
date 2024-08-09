@@ -16,12 +16,12 @@ const CartDropdown = () => {
   return (
     <div className="w-max flex flex-col gap-6">
       {!cart?.lineItems ? (
-        <div>Cart is empty</div>
+        <div>El carrito está vacío</div>
       ) : (
         <>
-          <h2 className="text-xl">Shopping cart</h2>
+          <h2 className="text-xl">Carrito de compras</h2>
           <div className="flex flex-col gap-8">
-            {/* ITEM */}
+            {/* ARTÍCULO */}
             {cart?.lineItems?.map((item) => (
               <div key={item._id} className="flex gap-4">
                 {item.image && (
@@ -32,7 +32,7 @@ const CartDropdown = () => {
                       96,
                       {}
                     )}
-                    alt="logo"
+                    alt="producto"
                     width={72}
                     height={96}
                     className="object-cover rounded-md"
@@ -40,13 +40,16 @@ const CartDropdown = () => {
                 )}
 
                 <div className="flex flex-col justify-between w-full">
-                  {/* TOP */}
+                  {/* SUPERIOR */}
                   <div className="flex justify-between items-center gap-8">
                     <h3 className="font-semibold">
                       {item.productName?.original}
                     </h3>
                     <p className="p-1 bg-gray-50 rounded-sm">
-                    {item.quantity && item.quantity > 1 ? `${item.quantity} x ` : ""}${item.price?.amount}
+                      {item.quantity && item.quantity > 1
+                        ? `${item.quantity} x `
+                        : ""}
+                      {item.price?.amount}
                     </p>
                   </div>
 
@@ -54,9 +57,11 @@ const CartDropdown = () => {
                     {item.availability?.status}
                   </p>
 
-                  {/* BOTTOM */}
+                  {/* INFERIOR */}
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Qty: {item.quantity}</span>
+                    <span className="text-gray-500">
+                      Cantidad: {item.quantity}
+                    </span>
                     <button
                       disabled={isLoading}
                       className="text-blue-400"
@@ -65,7 +70,7 @@ const CartDropdown = () => {
                         cursor: isLoading ? "not-allowed" : "pointer",
                       }}
                     >
-                      Remove
+                      Eliminar
                     </button>
                   </div>
                 </div>
@@ -79,17 +84,17 @@ const CartDropdown = () => {
               {cart?.subtotal && <span> $ {cart?.subtotal?.amount}</span>}
             </div>
             <p className="text-gray-500 text-sm mt-2 mb-4">
-              Taxes and shipping calculated at checkout
+              Impuestos y envío calculados al finalizar la compra
             </p>
             <div className="flex justify-between text-sm">
               <button className="rounded-md py-3 px-4 ring-1 ring-gray-300">
-                View cart
+                Ver carrito
               </button>
               <button
                 disabled={isLoading}
                 className="rounded-md py-3 px-4 bg-black text-white disabled:cursor-not-allowed disabled:opacity-75"
               >
-                Checkout
+                Finalizar compra
               </button>
             </div>
           </div>

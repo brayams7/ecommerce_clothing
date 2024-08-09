@@ -119,7 +119,7 @@ const ProductList = async ({
                 ></div>
               )}
               <button className="rounded-2xl ring-1 ring-lama w-auto text-lama py-2 px-3 hover:bg-lama hover:text-white">
-                Add to cart
+                Añadir al carrito
               </button>
             </Link>
           )
